@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My E-Commerce Store</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-	<script src="assets/js/script.js"></script>
 	
 </head>
 <body>
     <header>
+
+        <script>
+        document.write("JavaScript is working!");
+        </script>
+
         <h1>My Store</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="pages/products.html">Products</a></li>
                 <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="#" id="cart-icon">🛒 (<span id="cart-count">0</span>)</a></li>
             </ul>
         </nav>
     </header>
@@ -49,12 +54,14 @@
             <img src="assets/images/images.jpg" alt="Product 2">
             <h3>Product 2</h3>
             <p>$24.99</p>
-            <button>Add to Cart</button>
+            <button onclick="addToCart('Product 2', 24.99)">Add to Cart</button>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 My Store. All Rights Reserved.</p>
+        <script src="assets/js/script.js"></script>
+	
     </footer>
 </body>
 </html>
