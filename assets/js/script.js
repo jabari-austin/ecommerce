@@ -3,6 +3,7 @@ const cartCount = document.getElementById("cart-count");
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const cartModal = document.getElementById("cart-modal");
+const cartIcon = document.getElementById("cart-icon");
 const closeModal = document.querySelector(".close");
 
 // Function to add items to cart
@@ -38,6 +39,12 @@ function removeFromCart(name) {
 }
 
 // Open and close cart modal
-document.getElementById("cart-icon").onclick = () => cartModal.style.display = "block";
-closeModal.onclick = () => cartModal.style.display = "none";
+cartIcon.onclick= function() { 
+    cartModal.style.display = "block"; 
+}
+
+closeModal.onclick = function() {
+    cartModal.style.display = "none";
+}
+
 window.onclick = (event) => { if (event.target == cartModal) cartModal.style.display = "none"; };
