@@ -1,4 +1,4 @@
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartCount = document.getElementById("cart-count");
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
@@ -14,6 +14,7 @@ function addToCart(name, price) {
     } else {
         cart.push({ name, price, quantity: 1 });
     }
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCart();
 }
 
@@ -35,6 +36,7 @@ function updateCart() {
 // Function to remove items from cart
 function removeFromCart(name) {
     cart = cart.filter(item => item.name !== name);
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCart();
 }
 
